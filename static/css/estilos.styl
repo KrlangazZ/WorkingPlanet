@@ -1,5 +1,7 @@
 @import "foo.styl"
+@import "url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800)"
 body
+	font-family "Open Sans" sans-serif
 	font-size 16px
 	margin 0
 	background-color: #b8d6d6
@@ -30,12 +32,12 @@ body
 	background-color #2b78e4
 	border none
 	border-radius: 1em	
+	box-shadow: 0px 0px 0px 5px #00ff48
 	display: block
 	margin 5em auto
 	max-width: 20em
-	text-align center
 	position: relative	
-	box-shadow: 0px 0px 0px 5px #00ff48
+	text-align center
 	span
 		margin-top 1em
 		font-size 2em
@@ -55,10 +57,10 @@ body
 	background-color #00ff48
 	border none
 	border-radius 1.5em
+	box-shadow: 0px 0px 0px 5px #00ff48
 	margin 1em auto 
 	padding .5em 2em .5em 2em
 	position: relative	
-	box-shadow: 0px 0px 0px 5px #00ff48
 	&:focus
 		outline: none	
 	
@@ -71,13 +73,25 @@ body
 .Select
 	display block
 	margin-top 2em
-	text-align center
+	margin-left: 5em
+	text-align left
+	
+.Select-name
+	display none
+.Select-mes
+	background-color #8fc246
+	border none
+	border-radius 1.5em
+	color #3F505C
+	font-weight: bold
 
 .Timesheet
 	text-align center
 .Timesheet-table
 	border: 1px solid #7a7;
 	margin 1em auto
+	th 
+		border: 1px solid #7a7;
 .Timesheet-tableHead
 	margin-top 1em auto	
 .Timesheet-tableBody

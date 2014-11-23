@@ -26,8 +26,17 @@
 			<option>Ene</option>
 			<option>Feb</option>
 			<option>Mar</option>
+			<option>Abr</option>
+			<option>May</option>
+			<option>Jun</option>
+			<option>Jul</option>
+			<option>Ago</option>
+			<option>Sep</option>
+			<option>Oct</option>
+			<option>Nov</option>
+			<option>Dic</option>
 		</select>
-        <input class="Select-input" type="text" placeholder="Dias del Mes" required>
+        
 	</section>
 
 	<section class="Timesheet">
@@ -129,7 +138,7 @@
 
 		</table>
 		
-		<input class="Timesheet-tableButton" id="sumar" type="submit" value="Sumar">
+		<input class="Timesheet-tableButton" id="sumar" type="button" value="Sumar" onclick="sumar()">
 
 		</form>
 	</section>
