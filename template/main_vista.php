@@ -24,22 +24,22 @@ date_default_timezone_set("Chile/Continental");?>
 			<option>Dirk Ruttger</option>
 			<option>Paul Manfield</option>
 		</select>
-		<select class="Select-mes">
-			<option>Seleccione Mes</option>
-			<option>Ene</option>
-			<option>Feb</option>
-			<option>Mar</option>
-			<option>Abr</option>
-			<option>May</option>
-			<option>Jun</option>
-			<option>Jul</option>
-			<option>Ago</option>
-			<option>Sep</option>
-			<option>Oct</option>
-			<option>Nov</option>
-			<option>Dic</option>
+		<select id="Select-mes" class="Select-mes">
+			<option values="<?php echo date('n'); ?>">Seleccione Mes</option>
+			<option value="1">Enero</option>
+			<option value="2">Febrero</option>
+			<option value="3">Marzo</option>
+			<option value="4">Abril</option>
+			<option value="5">Mayo</option>
+			<option value="6">Junio</option>
+			<option value="7">Julio</option>
+			<option value="8">Agosto</option>
+			<option value="9">Septiembre</option>
+		    <option value="10">Octubre</option>
+			<option value="11">Noviembre</option>
+			<option value="12">Diciembre</option>
 		</select>
-        
+        <?php $val_mes = ''; ?>
 	</section>
 
 	<section class="Timesheet">
@@ -129,9 +129,12 @@ date_default_timezone_set("Chile/Continental");?>
                          	}
 					 	echo "<td ".$feriado." > ".$res." </td>";
 					 }	
-					} ?>
+				} if($res && !(($i%6==0) || ($i%7==0))){?>
 					<th ><input <?php echo "id='resultado".($acum_id++)."'"; ?> class='Timesheet-tableInput' type='text' disabled></th>
+                  <?php }?>
 
+                  <th></th>
+                   
 				</tr>
           <?php endforeach; ?>
 

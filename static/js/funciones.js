@@ -31,3 +31,14 @@ $(document).ready(function sumar(){
        });            
           
  });  
+
+$(document).ready(function (){
+
+      $('#Select-mes').change(function() {
+
+                  var mes = $(this).val();
+                 
+
+             });            
+          
+ });  
