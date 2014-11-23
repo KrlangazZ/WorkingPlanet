@@ -4,6 +4,7 @@
 	<meta charset="UTF-8"/>
 	<title> Working Planet </title>
 	<link rel="stylesheet" href="../static/css/estilos.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <header class="Header">    	

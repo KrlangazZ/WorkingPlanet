@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php include ('validar_dia.php'); 
+date_default_timezone_set("Chile/Continental");?>
 <head>
 	<meta charset="UTF-8"/>
 	<title></title>
 	<link rel="stylesheet" href="../static/css/estilos.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -62,14 +65,10 @@
 					<th></th>
 					<th></th>
 					<!-- Dias Del Mes -->
-					<?php
-					date_default_timezone_set("Chile/Continental");
+					
+					
 
-					 for ($i=1; $i < 8; $i++) { 
-
-						echo "<th>".$i."</th>";
-						
-					} ?>
+					 
 					<th>Total Hrs</th>
 					
 				</tr>
@@ -108,7 +107,7 @@
 			</thead>
 
 			<tbody class="Timesheet-tableBody">
-                <?php for ($j=1; $j < 20; $j++) { ?>
+                <?php foreach ($calendar as $days) : ?>
 				<tr>
 					<th>1</th>
 					<th>99</th>
@@ -116,16 +115,25 @@
 					<th>Administracion</th>
 					<?php
 					
-
+                     $acum_id=0;
 					 for ($i=1; $i < 8; $i++) { 
-
-						echo "<th ><input id='val".$j.$i."'class='Timesheet-tableInput' type='number' min='1' max='99'></th>";
-						
+                         $res = isset($days[$i]) ? $days[$i] : '';
+                         $feriado = "";
+                         
+                         if($res && !(($i%6==0) || ($i%7==0))){
+                         	
+						echo "<td ".$feriado." > ".$res." <input id='val".$res."'class='Timesheet-tableInput' type='number' min='1' max='99'></td>";
+					 }else{
+					 	if(($i%6==0) || ($i%7==0)){
+                         		$feriado = "class='Feriado'";
+                         	}
+					 	echo "<td ".$feriado." > ".$res." </td>";
+					 }	
 					} ?>
-					<th ><input <?php echo "id='resultado".$j.($i-1)."'"; ?> class='Timesheet-tableInput' type='text' disabled></th>
+					<th ><input <?php echo "id='resultado".($acum_id++)."'"; ?> class='Timesheet-tableInput' type='text' disabled></th>
 
 				</tr>
-            <?php } ?>
+          <?php endforeach; ?>
 
 				
 			</tbody>
@@ -133,6 +141,8 @@
 
 
 			<tfoot>
+
+
 				
 			</tfoot>
 
@@ -142,6 +152,17 @@
 
 		</form>
 	</section>
+
+	<div class="Debug">
+		<?php 
+
+		
+		echo $res;
+
+
+
+		?>
+	</div>
 
 	<footer class="Footer">
 		<p class="Footer-copyright"> CEEC Web Design Todos Los Derechos Reservados</p>

@@ -1,5 +1,5 @@
 @import "foo.styl"
-@import "url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800)"
+
 body
 	font-family "Open Sans" sans-serif
 	font-size 16px
@@ -63,7 +63,16 @@ body
 	position: relative	
 	&:focus
 		outline: none	
+
+.Debug
+	float: right
+	border 2px solid #100
+	padding: 10em
+	margin-right: 1em
+	margin-bottom: 1em
+	font-weight: bold
 	
+
 .Footer
 	text-align center
 	font-size: 1.1em
@@ -84,6 +93,10 @@ body
 	border-radius 1.5em
 	color #3F505C
 	font-weight: bold
+.Feriado
+	background-color: #f76f6a
+	font-weight: bold
+	color #910808
 
 .Timesheet
 	text-align center
@@ -92,6 +105,9 @@ body
 	margin 1em auto
 	th 
 		border: 1px solid #7a7;
+	td 
+		border: 1px solid #7a7;
+		text-align center
 .Timesheet-tableHead
 	margin-top 1em auto	
 .Timesheet-tableBody
